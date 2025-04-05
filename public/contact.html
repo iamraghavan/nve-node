@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
-
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/all.min.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="/assets/css/meanmenu.css">
-    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/assets/css/nice-select.css">
-    <link rel="stylesheet" href="/assets/css/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="/assets/css/flaticon.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
 
 
@@ -33,7 +31,7 @@
                     <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
                             <a href="/">
-                                <img src="/assets/img/logo/black-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
                             </a>
                         </div>
                         <div class="offcanvas__close">
@@ -124,10 +122,10 @@
                     <div class="header-left">
                         <div class="logo">
                             <a href="/" class="header-logo">
-                                <img src="/assets/img/logo/black-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
                             </a>
                             <a href="/" class="header-logo-2">
-                                <img src="/assets/img/logo/black-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
                             </a>
                         </div>
                         <div class="mean__menu-wrapper">
@@ -195,61 +193,139 @@
     </header>
 
 
-    <% if (product) { %>
+
     <!-- Main Content -->
 
-    <div class="breadcrumb-wrapper fix bg-cover" style="background-image: url('/assets/img/nve/photo-1590496793907-4d66e2994b4d.jpeg');">
+    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('/assets/img/nve/photo-1590496793907-4d66e2994b4d.jpeg');">
         <div class="container">
-            <div class="page-heading style-2">
+            <div class="page-heading">
                 <div class="breadcrumb-sub-title">
-                    <span class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><%= product.name %></span>
-                    <h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;"><%= product.breadcrumb %></h1>
+                    <span class="wow fadeInUp" data-wow-delay=".3s">Contact Us</span>
+                    <h1 class="wow fadeInUp" data-wow-delay=".5s">Talk to Our Sales Team</h1>
                 </div>
             </div>
         </div>
     </div>
-
-    <section class="who-we-are-section fix section-padding pt-20">
+    
+  
+    <section class="contact-us-section section-padding fix">
+       
         <div class="container">
-            <div class="who-we-are-wrapper">
+            <div class="contact-us-wrapper">
                 <div class="row g-4">
                     <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-title style-2 mb-0">
-                                
-                                <h2 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><%= product.name %></h2>
+                        <div class="section-title style-2">
+                            <span class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Get in Touch</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                Your Trusted Fabric Partner Awaits!
+                            </h2>
+                        </div>
+                        <div class="contact-image">
+                            <img src="assets/img/nve/Contact-us-rafiki.svg" alt="contact-img">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-us-content">
+                            <div class="contact-us-box">
+                                <div class="icon">
+                                    <img src="assets/img/icon/location.svg" alt="Location Icon">
+                                </div>
+                                <div class="content">
+                                    <span>Location</span>
+                                    <h5>
+                                        6 / 1000 / 3, Suriya Vinayagar Street, Main Road Pudukkadai,<br>
+                                        Vettaikkaraniruppu, Nagapattinam, <br>
+                                        Tamil Nadu 611 112
+                                    </h5>
+                                </div>
                             </div>
-                            <h5 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <%= product.description %>
-                            </h5>
-                           
-                            <a href="/contact-us" class="theme-btn theme-btn-2 wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                                Meet Our Team
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <div class="contact-us-box">
+                                <div class="icon">
+                                    <img src="assets/img/icon/email.svg" alt="Email Icon">
+                                </div>
+                                <div class="content">
+                                    <span>Email Address</span>
+                                    <h5>
+                                        <a href="mailto:nithiyavibeexports@gmail.com">nithiyavibeexports@gmail.com</a>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="contact-us-box mb-0">
+                                <div class="icon">
+                                    <img src="assets/img/icon/call.svg" alt="Phone Icon">
+                                </div>
+                                <div class="content">
+                                    <span>Call Us</span>
+                                    <h5>
+                                        <a href="tel:+917338947748">+91 7338 947 748</a>
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                        <div class="thumb">
-                            <img src="<%= product.img_url_primary %>" alt="<%= product.name %>">
-                           
-                        </div>
-                    </div>
-                </div>
+               </div>
             </div>
         </div>
     </section>
+     
 
-  
-   
+    <div class="map-section">
+        <div class="container">
+            <div class="map-items">
+                <div class="googpemap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d162809.8652180171!2d79.832653!3d10.796422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a556c64ffffffff%3A0xb5436ef14c8555d3!2sBUMBLE%20BEES!5e1!3m2!1sen!2sin!4v1743859518665!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
+    <section class="contact-section-2 section-padding fix">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="contact-box-items">
+                <h3 class="wow fadeInUp" data-wow-delay=".3s">Send Us Message</h3>
+                <p class="wow fadeInUp" data-wow-delay=".5s">
+                  Your email address will not be published. Required fields are marked *
+                </p>
+                <form class="contact-form-items">
+                    <div class="row g-4">
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="form-clt">
+                          <input type="text" name="name" placeholder="Full Name" required inputmode="text" pattern="[a-zA-Z\s]+" />
+                        </div>
+                      </div>
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="form-clt">
+                          <input type="tel" name="phone" placeholder="Phone" required inputmode="numeric" pattern="[0-9]*" />
+                        </div>
+                      </div>
+                      <div class="col-lg-12 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="form-clt">
+                          <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                      </div>
+                      <div class="col-lg-12 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="form-clt">
+                          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
+                        <button type="submit" class="theme-btn">
+                          Send your message <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
 
     <!-- End Main Content -->
-    <% } else { %>
-        <h2>Product Not Found</h2>
-        <p>Sorry, the product you are looking for does not exist.</p>
-        <a href="/products-list">Back to Products</a>
-    <% } %>
 
   
     <section class="footer-section fix">
@@ -291,7 +367,7 @@
                           <h4>Support</h4>
                        </div>
                        <ul class="list-items">
-                          <li><a href="about.html">Privacy Policy</a></li>
+                          <li><a href="/about-us">Privacy Policy</a></li>
                           <li><a href="/contact-us">Contact Us</a></li>
                        </ul>
                     </div>
@@ -317,7 +393,7 @@
         <div class="footer-middle-wrapper">
            <div class="container">
               <div class="footer-middle-item">
-                 <div class="footer-logo wow fadeInUp" data-wow-delay=".3s" style="visibility:visible;animation-delay:.3s;animation-name:fadeInUp"><a href="/"><img alt="logo-img" src="/assets/img/logo/white-logo.svg"></a></div>
+                 <div class="footer-logo wow fadeInUp" data-wow-delay=".3s" style="visibility:visible;animation-delay:.3s;animation-name:fadeInUp"><a href="/"><img alt="logo-img" src="assets/img/logo/white-logo.svg"></a></div>
                  <div class="footer-contact">
                     <h3 class="wow fadeInUp" data-wow-delay=".5s" style="visibility:visible;animation-delay:.5s;animation-name:fadeInUp">Need a Fabrics Products?</h3>
                     <a href="/contact-us" class="theme-btn wow fadeInUp" data-wow-delay=".7s" style="visibility:visible;animation-delay:.7s;animation-name:fadeInUp">Contact Us
@@ -331,82 +407,90 @@
               <div class="footer-wrapper">
                  <p class="wow fadeInUp" data-wow-delay=".3s" style="visibility:visible;animation-delay:.3s;animation-name:fadeInUp">Copyright © 2025 - All Rights Reserved</p>
                  <div class="social-icon wow fadeInUp" data-wow-delay=".5s" style="visibility:visible;animation-delay:.5s;animation-name:fadeInUp"><a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fa-brands fa-instagram"></i></a> <a href="#"><i class="fa-brands fa-youtube"></i></a></div>
-                 <div class="car-image"><img alt="img" src="/assets/img/footer/car.png"></div>
+                 <div class="car-image"><img alt="img" src="assets/img/footer/car.png"></div>
               </div>
            </div>
         </div>
      </section>
 
-    <script src="/assets/js/jquery-3.7.1.min.js"></script>
-    <script src="/assets/js/viewport.jquery.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/jquery.nice-select.min.js"></script>
-    <script src="/assets/js/jquery.waypoints.js"></script>
-    <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/swiper-bundle.min.js"></script>
-    <script src="/assets/js/jquery.meanmenu.min.js"></script>
-    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="/assets/js/ion.rangeSlider.min.js"></script>
-    <script src="/assets/js/wow.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
     
+<!-- Required Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.5.0/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+    document.querySelector(".contact-form-items").addEventListener("submit", async function(e) {
+        // Prevent form's default behavior (default submission)
+        e.preventDefault();
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        // Collect form data
+        let formData = {
+            name: document.querySelector('input[placeholder="Full Name"]').value,
+            phone: document.querySelector('input[placeholder="Phone"]').value,
+            email: document.querySelector('input[placeholder="Email"]').value,
+            message: document.querySelector('textarea[placeholder="Message"]').value
+        };
 
+        // Debugging: Log form data to the console to check if values are being collected correctly
+        console.log(formData);
 
-    <script>
-        document.querySelector(".contact-form-items").addEventListener("submit", async function(e) {
-            e.preventDefault();
-    
-            let formData = {
-                name: document.querySelector('input[placeholder="Full Name"]').value,
-                phone: document.querySelector('input[placeholder="Phone"]').value,
-                email: document.querySelector('input[placeholder="Email"]').value,
-                message: document.querySelector('textarea[placeholder="Message"]').value
-            };
-    
-            try {
-                let response = await fetch("/api/send-mail", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
+        try {
+            // Send the form data via a POST request
+            let response = await fetch("/api/send-mail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            // Parse the response as JSON
+            let result = await response.json();
+
+            // If response is successful, display success message
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: result.success,
+                    confirmButtonColor: "#3085d6"
                 });
-    
-                let result = await response.json();
-    
-                if (response.ok) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success!",
-                        text: result.success,
-                        confirmButtonColor: "#3085d6"
-                    });
-    
-                    // Reset form fields
-                    document.querySelector(".contact-form-items").reset();
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: result.error,
-                        confirmButtonColor: "#d33"
-                    });
-                }
-            } catch (error) {
-                console.error("Error sending email:", error);
+
+                // Reset the form
+                document.querySelector(".contact-form-items").reset();
+            } else {
+                // If an error occurred, show an error message
                 Swal.fire({
                     icon: "error",
-                    title: "Error!",
-                    text: "Something went wrong. Please try again later.",
+                    title: "Oops...",
+                    text: result.error || "Something went wrong.",
                     confirmButtonColor: "#d33"
                 });
             }
-        });
-    </script>
-    
-
+        } catch (error) {
+            // If the fetch itself fails (network issue, etc.)
+            console.error("Error sending email:", error);
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Something went wrong. Please try again later.",
+                confirmButtonColor: "#d33"
+            });
+        }
+    });
+</script>
 
 
 </body>
