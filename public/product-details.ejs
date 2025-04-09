@@ -3,7 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <!-- Title Tag (Dynamic) -->
+     <title><%= product.name %> | NITHIYA VIBE EXPORTS</title>
+    
+     <!-- Meta Description (Dynamic) -->
+     <meta name="description" content="<%= product.description %>">
+     
+     <!-- Keywords (Static or Dynamic) -->
+     <meta name="keywords" content="premium cotton fabrics, woven fabrics, denim fabric, knitted fabrics, textile supply, global textile business">
+     
+     <!-- Open Graph Tags -->
+     <meta property="og:title" content="<%= product.name %> | NITHIYA VIBE EXPORTS">
+     <meta property="og:description" content="<%= product.description %>">
+     <meta property="og:image" content="<%= product.img_url_primary %>">
+     <meta property="og:url" content="<%= product.url %>">
+     <meta property="og:type" content="product">
+ 
+     <!-- Twitter Card Tags -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="<%= product.name %> | NITHIYA VIBE EXPORTS">
+     <meta name="twitter:description" content="<%= product.description %>">
+     <meta name="twitter:image" content="<%= product.img_url_primary %>">
+     
+     <!-- Favicon -->
+     <link rel="icon" href="/assets/img/favicon.ico">
+     
+     <!-- Responsive Viewport Settings -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+     <!-- Ensure legacy IE versions render using the latest engine -->
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+     <!-- Additional Meta Tags -->
+     <meta name="robots" content="index, follow">
+     <meta charset="UTF-8">
 
 
 
@@ -71,7 +104,7 @@
                                 <span>
                                     Email:
                                 </span>
-                                <a href="mailto:nithiyavibeexports@gmail.com">nithiyavibeexports@gmail.com</a>
+                                <a style="text-transform: lowercase !important;">nithiyavibeexports@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -307,7 +340,7 @@
                        </div>
                        <div class="contact-info mb-0">
                           <p>Have a questions?</p>
-                          <h3><a href="mailto:nithiyavibeexports@gmail.com">nithiyavibeexports@gmail.com</a></h3>
+                          <h3><a style="text-transform: lowercase !important;">nithiyavibeexports@gmail.com</a></h3>
                        </div>
                     </div>
                  </div>
