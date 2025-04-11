@@ -6,6 +6,7 @@ const helmet = require("helmet");
 require("dotenv").config();
 const morgan = require("morgan");
 const pageRoutes = require("./routes/pageRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,6 +27,7 @@ app.use(
           defaultSrc: ["'self'"],
           scriptSrc: [
             "'self'",
+            "'unsafe-inline'",
             "maps.googleapis.com",
             "maps.gstatic.com",
           ],
@@ -58,6 +60,7 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 // Routes
 app.use("/", pageRoutes);
+app.use("/api", contactRoutes);
 
 // 404 Page Not Found
 app.use((req, res) => {

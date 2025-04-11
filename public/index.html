@@ -349,7 +349,7 @@
                     <div class="feature-contact-box">
                        <h4>Contact Form</h4>
                      
-                       <form action="/send-mail" method="post" class="contact-form-items">
+                       <form class="contact-form-items">
                           <div class="row g-4">
                              <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="form-clt">
@@ -596,6 +596,130 @@
            </div>
         </div>
      </section>
+<!-- Make sure SweetAlert2 is loaded properly -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".contact-form-items");
+        const submitButton = form.querySelector(".theme-btn");
+
+        if (!form || !submitButton) {
+            console.error("Form or submit button not found!");
+            return;
+        }
+
+        form.addEventListener("submit", (e) => handleFormSubmit(e, form, submitButton));
+    });
+
+    let isRateLimited = false;  // Variable to track rate limiting
+
+    function handleFormSubmit(e, form, submitButton) {
+        e.preventDefault();
+
+        // Check if the button is rate-limited (disabled for a certain time)
+        if (isRateLimited) {
+            alert("You are submitting too frequently. Please wait a moment before submitting again.");
+            return;
+        }
+
+        // Form Validation: Ensure all fields are filled
+        if (!validateForm(form)) {
+            alert("Please fill in all the required fields before submitting.");
+            return;
+        }
+
+        // Disable button without adding styles (just disabling)
+        toggleButtonState(submitButton, true);
+
+        const formData = collectFormData(form);
+
+        // Submit data and handle the response
+        sendFormData(formData)
+            .then(response => handleApiResponse(response, form, submitButton))
+            .catch(error => handleError(error, submitButton));
+    }
+
+    // Function to validate form fields
+    function validateForm(form) {
+        const name = form.querySelector('input[placeholder="Full Name"]').value;
+        const phone = form.querySelector('input[placeholder="Phone"]').value;
+        const email = form.querySelector('input[placeholder="Email"]').value;
+        const message = form.querySelector('textarea[placeholder="Message"]').value;
+
+        return name && phone && email && message;
+    }
+
+    function collectFormData(form) {
+        return {
+            name: form.querySelector('input[placeholder="Full Name"]').value,
+            phone: form.querySelector('input[placeholder="Phone"]').value,
+            email: form.querySelector('input[placeholder="Email"]').value,
+            message: form.querySelector('textarea[placeholder="Message"]').value
+        };
+    }
+
+    async function sendFormData(formData) {
+        try {
+            const response = await fetch("/api/send-mail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+            return response.json();
+        } catch (error) {
+            throw new Error("Network error occurred while sending data");
+        }
+    }
+
+    function handleApiResponse(response, form, submitButton) {
+        if (response.success) {
+            alert(response.success);
+
+            form.reset();
+        } else {
+            alert(response.error || "Something went wrong. Please try again.");
+        }
+
+        // Reset button state after submission
+        toggleButtonState(submitButton, false);
+
+        // Start rate limiting after a successful or failed response
+        enableRateLimit();
+    }
+
+    function handleError(error, submitButton) {
+        console.error("Error sending email:", error);
+        alert(error.message || "Something went wrong. Please try again later.");
+
+        // Reset button state after error
+        toggleButtonState(submitButton, false);
+
+        // Start rate limiting after an error
+        enableRateLimit();
+    }
+
+    function toggleButtonState(button, isLoading) {
+        button.disabled = isLoading;
+        // Remove loading style if isLoading is false
+        if (!isLoading) {
+            button.classList.remove("loading");  // Removing the loading style if exists
+        }
+    }
+
+    // Function to enable rate limiting
+    function enableRateLimit() {
+        isRateLimited = true;
+
+        // Disable the button for 5 seconds (you can adjust this time as needed)
+        setTimeout(() => {
+            isRateLimited = false;
+        }, 5000);  // Disable for 5 seconds (5000 milliseconds)
+    }
+</script>
+
+
+     
+  
 
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/viewport.jquery.js"></script>
@@ -613,60 +737,7 @@
     
 
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-    <script>
-        document.querySelector(".contact-form-items").addEventListener("submit", async function(e) {
-            e.preventDefault();
     
-            let formData = {
-                name: document.querySelector('input[placeholder="Full Name"]').value,
-                phone: document.querySelector('input[placeholder="Phone"]').value,
-                email: document.querySelector('input[placeholder="Email"]').value,
-                message: document.querySelector('textarea[placeholder="Message"]').value
-            };
-    
-            try {
-                let response = await fetch("/api/send-mail", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
-    
-                let result = await response.json();
-    
-                if (response.ok) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success!",
-                        text: result.success,
-                        confirmButtonColor: "#3085d6"
-                    });
-    
-                    // Reset form fields
-                    document.querySelector(".contact-form-items").reset();
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: result.error,
-                        confirmButtonColor: "#d33"
-                    });
-                }
-            } catch (error) {
-                console.error("Error sending email:", error);
-                Swal.fire({
-                    icon: "error",
-                    title: "Error!",
-                    text: "Something went wrong. Please try again later.",
-                    confirmButtonColor: "#d33"
-                });
-            }
-        });
-    </script>
-    
-
 
 
 </body>
